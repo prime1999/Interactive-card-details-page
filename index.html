@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+    </style>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body class="font-body">
+    <div class="flex flex-col h-screen w-screen lg:flex-row">
+      <div class="h-2/5 w-full md:h-1/2 lg:w-1/2 lg:h-full">
+        <div
+          class="h-full bg-cover w-full lg:w-8/12 bg-mobile-main lg:bg-desktop-main"
+        >
+          <div
+            class="relative pt-12 ml-24 flex flex-col justify-center md:ml-2 lg:ml-36 lg:pt-28"
+          >
+            <div
+              class="-mt-6 bg-card-back bg-cover rounded-md h-52 w-80 md:w-96 md:-mt-8 lg:bg-card-front lg:mt-0"
+            >
+              <!-- card contents -->
+              <div class="hidden lg:block container w-10/12 mx-auto py-2">
+                <div class="flex items-center">
+                  <div class="w-12 h-12 bg-white rounded-full"></div>
+                  <div
+                    class="w-6 h-6 bg-transparent ml-2 border rounded-full"
+                  ></div>
+                </div>
+                <div class="mt-14 text-white">
+                  <div id="number" class="card-number">
+                    <h1 class="text-lg">000 000 000 000</h1>
+                  </div>
+                  <div class="mt-4 flex justify-between">
+                    <span id="name" class="card-name">John Doe</span>
+                    <span id="date" class="card-date">MM / YY</span>
+                  </div>
+                </div>
+              </div>
+              <div class="text-white w-5/6 mx-auto mt-24 md:mr-12 lg:hidden">
+                <div class="flex justify-end -mt-2">
+                  <p id="cvc">123</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-card-front bg-cover -ml-12 -mt-24 rounded-md md:ml-24 lg:ml-12 lg:mt-6 h-52 w-80 md:w-96 lg:bg-card-back"
+            >
+              <!-- card contents -->
+              <div class="container w-10/12 mx-auto py-2 lg:hidden">
+                <div class="flex items-center">
+                  <div class="w-12 h-12 bg-white rounded-full"></div>
+                  <div
+                    class="w-6 h-6 bg-transparent ml-2 border rounded-full"
+                  ></div>
+                </div>
+                <div class="mt-14 text-white">
+                  <div id="number" class="card-number">
+                    <h1 class="text-lg">090 000 000 000</h1>
+                  </div>
+                  <div class="mt-4 flex justify-between">
+                    <span id="name" class="card-name">John Doe</span>
+                    <span id="date" class="card-date">MM / YY</span>
+                  </div>
+                </div>
+              </div>
+              <div class="hidden lg:block text-white w-5/6 mx-auto mt-24">
+                <div class="flex justify-end -mt-2 mr-2">
+                  <p id="cvc">123</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="h-3/5 w-full md:w-1/2 md:h-full">
+        <div class="h-full">
+          <div
+            id="content"
+            class="relative container mx-auto p-4 top-1/4 md:left-1/2 lg:left-0"
+          >
+            <form class="container mx-auto lg:w-8/12 md:10/12">
+              <div class="">
+                <div class="flex flex-col">
+                  <label class="text-base mb-2">CARDHOLDER'S NAME</label>
+                  <input
+                    id="card-name-input"
+                    class="bg-transparent border border-2 border-lightGray rounded-md h-10 mb-3 pl-2 focus:outline-none"
+                    type="text"
+                    placeholder="e.g John Doe"
+                  />
+                  <p class="-mt-2 mb-2 text-md text-red-500"></p>
+                </div>
+                <div class="flex flex-col">
+                  <label class="text-base mb-2">CARD NUMBER</label>
+                  <input
+                    id="card-number-input"
+                    class="bg-transparent border border-2 border-lightGray rounded-md h-10 mb-3 pl-2 focus:outline-none"
+                    type="tel"
+                    maxlength="16"
+                    onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                    onchange="return toChange()"
+                    placeholder="e.g 1234 5678 9809 3455"
+                  />
+                  <p class="-mt-2 mb-2 text-md text-red-500"></p>
+                </div>
+                <div class="flex mt-2">
+                  <div class="w-1/2 mr-4">
+                    <label class="text-base mb-2">Exp date (MM / YY)</label>
+                    <div id="card-date" class="flex w-1/2 mt-2">
+                      <input
+                        id="card-month"
+                        class="w-20 mr-2 bg-transparent border border-2 border-lightGray rounded-md h-10 mb-3 pl-2 focus:outline-none"
+                        type="tel"
+                        maxlength="2"
+                        onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                        placeholder="MM"
+                      />
+                      <input
+                        id="card-year"
+                        class="w-20 bg-transparent border border-2 border-lightGray rounded-md h-10 mb-3 pl-2 focus:outline-none"
+                        type="tel"
+                        maxlength="2"
+                        onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                        placeholder="YY"
+                      />
+                    </div>
+                    <p class="-mt-2 mb-2 text-md text-red-500"></p>
+                  </div>
+                  <div class="flex flex-col w-1/2">
+                    <label class="text-base mb-2">CVC</label>
+                    <input
+                      id="card-cvc"
+                      class="bg-transparent border border-2 border-lightGray rounded-md h-10 mb-3 pl-2 focus:outline-none"
+                      type="tel"
+                      maxlength="3"
+                      onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                      placeholder="e.g 123"
+                    />
+                    <p class="-mt-2 mb-2 text-md text-red-500"></p>
+                  </div>
+                </div>
+                <input
+                  class="w-full mx-auto text-center bg-veryDarkViolet text-white text-base py-2 rounded-md hover:cursor-pointer"
+                  type="submit"
+                  value="Confirm"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
