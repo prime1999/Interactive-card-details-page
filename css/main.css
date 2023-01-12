@@ -543,6 +543,10 @@ video {
   }
 }
 
+.absolute{
+  position: absolute;
+}
+
 .relative{
   position: relative;
 }
@@ -554,11 +558,6 @@ video {
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
-}
-
-.my-2{
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
 }
 
 .ml-24{
@@ -615,10 +614,6 @@ video {
 
 .mr-4{
   margin-right: 1rem;
-}
-
-.mb-4{
-  margin-bottom: 1rem;
 }
 
 .flex{
@@ -807,11 +802,6 @@ video {
   line-height: 1.5rem;
 }
 
-.text-2xl{
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -820,11 +810,6 @@ video {
 .text-red-500{
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
-}
-
-.text-darkGrayishViolet{
-  --tw-text-opacity: 1;
-  color: hsl(279 6% 55% / var(--tw-text-opacity));
 }
 
 body{

@@ -144,11 +144,11 @@ function submitForm(nameValue, numberValue, monthValue, yearValue, cvcValue) {
       <img src="images/icon-complete.svg" class="mb-2" alt="" />
     </div>
     <h3 class="text-2xl my-2 text-veryDarkDiolet">Thank You</h3>
-    <p class="text-md mb-4 text-darkGrayishViolet">
+    <p class="text-md my-2 mt-4 text-darkGrayishViolet">
       We've added your card details
     </p>
     <button onClick=(location.reload())
-      class="w-full bg-veryDarkViolet text-white py-2 rounded-md"
+      class="w-full bg-veryDarkViolet mt-4 text-white py-2 rounded-md"
     >
       Continue
     </button>
